@@ -6,9 +6,8 @@ function RenderLeaders({leader}) {
     return(
         <div key={leader.id} className='col-12'>
             <div className='row'>
-
                 <Media className='col-12 col-md-2 ml-1'>
-                     <Media object src={leader.image} alt={leader.name} />
+                     <Media className='d-block mx-auto' object src={leader.image} alt={leader.name} />
                  </Media>
 
                 <Media body className="col-12 col-md-10">
