@@ -9,7 +9,6 @@ function RenderLeaders({leader}) {
                 <Media className='col-12 col-md-2 ml-1'>
                      <Media className='d-block mx-auto' object src={leader.image} alt={leader.name} />
                  </Media>
-
                 <Media body className="col-12 col-md-10">
                      <Media heading>{leader.name}</Media>
                      <p>{leader.designation}</p>
@@ -20,8 +19,7 @@ function RenderLeaders({leader}) {
     );
 }
 function About(props) {
-
-    const leaders = props.leaders.map((leader) => {
+    const leader = props.leaders.map((leader) => {
         return (
             <RenderLeaders leader={leader} />
         );
@@ -83,7 +81,7 @@ function About(props) {
                 </div>
                 <div className="col-12">
                     <div className='row'>
-                        {leaders}
+                        {leader}
                     </div>
                 </div>
             </div>
