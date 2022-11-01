@@ -21,6 +21,10 @@ class CommentForm extends Component {
             isModalOpen: !this.state.isModalOpen
         });
     }
+    handleSubmit(values) {
+        this.toggleModal();
+        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+    }
     render() {
         return (
             <div>
@@ -32,7 +36,7 @@ class CommentForm extends Component {
                         Submit Comment
                     </ModalHeader>
                     <ModalBody>
-                    <LocalForm>
+                    <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
                             <Row className="form-group mb-2">
                                 <Label htmlFor="rating" className="font-weight-bold">Rating</Label>
                                 <Col md={20}>
