@@ -27,11 +27,11 @@ function RenderDish({ dish }) {
     }
 }
 
-function RenderComments({ comment, addComment, dishId }) {
-    if (comment == null) {
+function RenderComments({comments, postComment, dishId}) {
+    if (comments == null) {
         return <div></div>
     }
-    const cmt = comment.map(comment => {
+    const cmt = comments.map(comment => {
         return (
             <li key={comment.id}>
                 <p>{comment.comment}</p>
@@ -47,7 +47,7 @@ function RenderComments({ comment, addComment, dishId }) {
                 {cmt}
             </ul>
             <div>
-                <CommentForm dishId={dishId} addComment={addComment} />
+            <CommentForm dishId={dishId} postComment={postComment} />
             </div>
         </div>
     )
@@ -91,7 +91,7 @@ const DishDetail = (props) => {
                 <div className='row'>
                     <RenderDish dish={props.dish} />
                     <RenderComments comment={props.comments}
-                        addComment={props.addComment} dishId={props.dish.id}
+                        postComment={props.postComment} dishId={props.dish.id}
                     />
                 </div>
             </div>
